@@ -9,13 +9,7 @@ export const move = (player = "X", position) => ({
 });
 
 export default function gameReducer(state = {}, action) {
-  console.log(action.player);
-  switch (action.player) {
-    case "X":
-      return { turn: "O", board: board.setIn(action.position, action.player) };
-    case "O":
-      return { turn: "X", board: board.setIn(action.position, action.player) };
-    default:
-      return state;
-  }
+  //invoke function that figures out turn
+  //another func that creates new board from old board --> initialise to new map and invoke inside
+  return { turn: "X", board: board.setIn(action.position, action.player) };
 }
